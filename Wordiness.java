@@ -1,0 +1,205 @@
+
+import java.util.Scanner;
+
+
+
+public class Wordiness {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Welcome to Wordiness!");
+        System.out.println("What would you like to do?");
+        System.out.println("1. Text Filler Game\n2. Decryption Puzzle Solver");
+        System.out.println("3. Citation Manager\n4. Subscription Manager");
+
+        int choice = scan.nextInt();
+        scan.nextLine();
+
+
+        switch (choice) {
+            case 1:
+            {
+                System.out.println("Welcome to the Text Filler Game!");
+                System.out.println("Please provide the following:");
+
+                System.out.println("Adjective:");
+                String a1 = scan.nextLine();
+
+                System.out.println("Nationality:");
+                String a2 = scan.nextLine();
+
+                System.out.println("Name:");
+                String a3 = scan.nextLine();
+
+                System.out.println("Noun:");
+                String a4 = scan.nextLine();
+
+                System.out.println("Adjective:");
+                String a5 = scan.nextLine();
+
+                System.out.println("Noun:");
+                String a6 = scan.nextLine();
+
+                System.out.println("Adjective:");
+                String a7 = scan.nextLine();
+
+                System.out.println("Adjective:");
+                String a8 = scan.nextLine();
+
+                System.out.println("Plural Noun:");
+                String a9 = scan.nextLine();
+
+                System.out.println("Noun:");
+                String a10 = scan.nextLine();
+
+                System.out.println("Number:");
+                String a11 = scan.nextLine();
+
+                System.out.println("Plural Shape:");
+                String a12 = scan.nextLine();
+
+                System.out.println("Food:");
+                String a13 = scan.nextLine();
+
+                System.out.println("Food:");
+                String a14 = scan.nextLine();
+
+                System.out.println("Number:");
+                String a15 = scan.nextLine();
+
+                System.out.println("Pizza was invented by a " +a1+ (" ") +a2+ (" chef named ")  +a3+ (". To " +
+                        "make a pizza, you \nneed to take a lump of "  +a4+ (" and make a thin, round ")  +a5+ (" ")  +a6+ (". Then " +
+                        "you cover it \nwith "  +a7+ (" sauce, ")  +a8+ (" cheese, and fresh topped ") +a9+ (". Next you have to \n" +
+                        "bake it in a very hot ") +a10+ (". When it is done, cut it into ")  +a11+ (" ")  +a12+ (". Some " +
+                        "kids \nlike ")  +a13+ (" pizza the best, but my favorite is the ")  +a14+ (" pizza. If I could, I " +
+                        "would eat pizza \n")  +a15+ (" times a day!"))));
+
+                break;
+            }
+            case 2:
+            {
+                System.out.println("Welcome to the Decryption Puzzle Solver!");
+                System.out.println("Please enter a 10-character encrypted String:");
+                String case2 = scan.nextLine();
+
+                String fifthletter = case2.substring(4, 5);
+                String lastletter = case2.substring(10 , 11);
+
+                case2 = case2.replace(fifthletter, lastletter);
+
+                case2 = case2.substring(0 , case2.length()-1);
+
+                case2 = case2.replaceAll("\\?" , "e");
+
+                String half1 = case2.substring(0 , 5);
+                String half2 = case2.substring(5 , 10);
+                case2 = half2 + half1;
+
+                System.out.println("The unencrypted String is: " + case2);
+
+                break;
+            }
+            case 3:
+            {
+                System.out.println("Welcome to the Citation Manager!");
+
+                System.out.println("Enter Author First Name:");
+                String firstname = scan.nextLine();
+
+                System.out.println("Enter Author Last Name:");
+                String lastname = scan.nextLine();
+
+                System.out.println("Enter Book Title:");
+                String book = scan.nextLine();
+
+                System.out.println("Enter Publisher:");
+                String publisher = scan.nextLine();
+
+                System.out.println("Enter Publisher City:");
+                String city = scan.nextLine();
+
+                System.out.println("Enter Publishing Year:");
+                String year = scan.nextLine();
+
+                String initial = firstname.substring(0 , 1);
+
+                System.out.println(("MLA: ") + lastname + (", ") + firstname + (". ") + book + (". ") + publisher + (", ") + year + ("."));
+                System.out.println(("APA: ") + lastname + (", ") + initial + (". (") + year + ("). ") + book + (". ") + city + (": ") + publisher + ("."));
+
+                break;
+            }
+            case 4:
+            {
+                double total;
+                double priceTime = 0;
+                double priceSchool = 0;
+                double priceLive = 0;
+                double months = 0;
+
+                System.out.println("Welcome to the Subscription Manager!");
+                System.out.println("How long do you want to subscribe?");
+                System.out.println("1. 1 Month\n2. 3 Months\n3. 6 Months\n4. 12 Months");
+                int time = scan.nextInt();
+                scan.nextLine();
+
+                System.out.println("Do you have any institutional affiliations?");
+                System.out.println("1. Purdue\n2. Federal Government\n3. AAA\n4. Local Library\n5. None");
+                int school = scan.nextInt();
+                scan.nextLine();
+
+                System.out.println("DO you want to sign up for our live document editing service?");
+                System.out.println("1. Yes\n2. No");
+                int live = scan.nextInt();
+                scan.nextLine();
+
+                if (time == 1) {
+                    priceTime = 9;
+                    months = 1;
+                }
+                else if (time == 2) {
+                    priceTime = 18;
+                    months = 3;
+                }
+                else if (time == 3) {
+                    priceTime = 30;
+                    months = 6;
+                }
+                else if (time == 4) {
+                    priceTime = 50;
+                    months = 12;
+                }
+
+                if (school == 1)
+                    priceSchool = .70;
+                else if (school == 2)
+                    priceSchool = .75;
+                else if (school == 3)
+                    priceSchool = .90;
+                else if (school == 4)
+                    priceSchool = .95;
+                else if (school == 5)
+                    priceSchool = 1;
+
+                if (live == 1)
+                {
+                    priceLive = 10.00 * months;
+                }
+                else if (live == 2)
+                    priceLive = 0;
+
+                total = (priceTime + priceLive) * priceSchool * 1.00;
+
+                System.out.printf("\nYour total is: %.2f\n" , total);
+
+
+                break;
+            }
+            default:
+            {
+                System.out.printf("");
+                break;
+            }
+        }
+        System.out.println("Thank You for using Wordiness!");
+    }
+}
